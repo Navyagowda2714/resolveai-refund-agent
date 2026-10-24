@@ -1,0 +1,44 @@
+# Machine-readable refund policy. The human-readable version lives in refund_policy.md;
+# citation ids (POL-x.y) refer to sections of that document.
+version: "2026.10"
+currency: EUR
+
+# Autonomy limits: what the agent may do WITHOUT a human.
+auto_resolution:
+  max_auto_refund_amount: 150.00   # refunds above this always go to a human (POL-9.1)
+  min_confidence: 0.80             # approvals/partials need at least this confidence
+  min_deny_confidence: 0.85        # denials are customer-facing and harder to undo
+  max_fraud_score: 29              # only "low" fraud risk tickets are auto-actioned
+
+# Return windows, in days since delivery (POL-1.1).
+windows:
+  default: 30
+  categories:
+    electronics: 30
+    apparel: 60
+    home: 30
+    beauty: 14
+    grocery: 7
+    toys: 30
+    books: 30
+  warranty_days: 365               # defects reported after the window -> warranty claim (POL-3.2)
+
+non_refundable_categories: [gift_cards, digital]          # POL-2.3
+final_sale_refundable_issues: [damaged, defective, wrong_item, not_received, missing_item]  # POL-2.2
+
+issues:
+  damaged:      {refund: affected_items, citation: POL-3.1}
+  defective:    {refund: affected_items, citation: POL-3.2}
+  wrong_item:   {refund: affected_items, citation: POL-3.3}
+  missing_item: {refund: affected_items, citation: POL-3.4}
+  not_received: {refund: full_order, citation: POL-4.1, in_transit_grace_days: 10}
+  late_delivery: {refund: shipping_or_goodwill, goodwill_pct: 10, citation: POL-4.3}
+  changed_mind: {refund: restocking_fee, restocking_fee_pct: 15, citation: POL-5.1}
+  unauthorized_charge: {refund: none, escalate: true, citation: POL-7.2}
+  other:        {refund: none, escalate: true, citation: POL-8.1}
+
+fraud:
+  levels: {medium: 30, high: 60}
+
+# Signals in the customer's message that always require a human (POL-7.1).
+escalation_triggers: [legal_threat, chargeback_threat, safety_hazard]
