@@ -1,0 +1,7 @@
+{
+  "message_id": "<example-1@mail.example.com>",
+  "from": "Maya Rossi <maya.rossi@example.com>",
+  "subject": "Broken plates",
+  "body": "Hi,\n\nTwo plates from my dinner set arrived cracked. Could I get a refund?\n\nThanks,\nMaya",
+  "attachments": [{"filename": "plates.jpg", "content_type": "image/jpeg", "description": "cracked ceramic plates"}]
+}
