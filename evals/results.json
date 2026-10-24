@@ -1,0 +1,390 @@
+{
+  "model": "offline-scripted",
+  "with_gate": {
+    "tickets": 80,
+    "label_distribution": {
+      "approve_refund": 18,
+      "escalate": 31,
+      "partial_refund": 15,
+      "deny": 16
+    },
+    "autonomous_resolution_pct": 62.5,
+    "decision_accuracy_pct": 92.5,
+    "automated_decision_accuracy_pct": 92.0,
+    "hard_subset_accuracy_pct": 40.0,
+    "hard_subset_size": 10,
+    "unsafe_approvals": 4,
+    "unsafe_approval_rate_pct": 5.0,
+    "unsafe_approval_rate_of_risky_pct": 8.5,
+    "over_refunds": 0,
+    "escalation_precision_pct": 93.3,
+    "escalation_recall_pct": 90.3,
+    "avg_tool_calls": 4.53,
+    "avg_llm_calls": 6.53,
+    "avg_simulated_latency_ms": 5573.1,
+    "p95_simulated_latency_ms": 6280.0,
+    "avg_tool_latency_ms": 567.8,
+    "confusion_matrix": {
+      "approve_refund": {
+        "approve_refund": 18,
+        "partial_refund": 0,
+        "deny": 0,
+        "escalate": 0
+      },
+      "partial_refund": {
+        "approve_refund": 0,
+        "partial_refund": 13,
+        "deny": 0,
+        "escalate": 2
+      },
+      "deny": {
+        "approve_refund": 0,
+        "partial_refund": 1,
+        "deny": 15,
+        "escalate": 0
+      },
+      "escalate": {
+        "approve_refund": 3,
+        "partial_refund": 0,
+        "deny": 0,
+        "escalate": 28
+      }
+    },
+    "per_scenario_accuracy": {
+      "already_refunded": "2/2",
+      "changed_mind": "4/4",
+      "damaged_high_value": "4/4",
+      "damaged_low": "5/5",
+      "defective_low": "4/4",
+      "final_sale": "3/3",
+      "hard_hidden_trigger": "0/3",
+      "hard_mixed_signals": "0/2",
+      "hard_negation": "2/2",
+      "hard_no_order_id": "2/2",
+      "hard_used_item": "0/1",
+      "identity_mismatch": "2/2",
+      "in_transit": "3/3",
+      "late_delivery": "2/2",
+      "mandatory_trigger": "4/4",
+      "missing_item": "5/5",
+      "missing_unidentified": "2/2",
+      "new_account_mismatch": "3/3",
+      "non_refundable": "3/3",
+      "not_received_confirmed": "3/3",
+      "not_received_unconfirmed": "3/3",
+      "outside_window": "4/4",
+      "serial_refunder": "4/4",
+      "unauthorized_charge": "2/2",
+      "vague": "2/2",
+      "warranty": "2/2",
+      "wrong_item": "4/4"
+    },
+    "errors": [
+      {
+        "id": "EV-069",
+        "scenario": "hard_hidden_trigger",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 54.0,
+        "label_amount": 0.0,
+        "flags": []
+      },
+      {
+        "id": "EV-070",
+        "scenario": "hard_hidden_trigger",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 39.0,
+        "label_amount": 0.0,
+        "flags": []
+      },
+      {
+        "id": "EV-071",
+        "scenario": "hard_hidden_trigger",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 59.0,
+        "label_amount": 0.0,
+        "flags": []
+      },
+      {
+        "id": "EV-074",
+        "scenario": "hard_mixed_signals",
+        "label": "partial_refund",
+        "predicted": "escalate",
+        "amount": 0.0,
+        "label_amount": 5.4,
+        "flags": [
+          "low_confidence"
+        ]
+      },
+      {
+        "id": "EV-075",
+        "scenario": "hard_mixed_signals",
+        "label": "partial_refund",
+        "predicted": "escalate",
+        "amount": 0.0,
+        "label_amount": 4.99,
+        "flags": [
+          "low_confidence"
+        ]
+      },
+      {
+        "id": "EV-078",
+        "scenario": "hard_used_item",
+        "label": "deny",
+        "predicted": "partial_refund",
+        "amount": 101.15,
+        "label_amount": 0.0,
+        "flags": []
+      }
+    ]
+  },
+  "gate_disabled": {
+    "tickets": 80,
+    "label_distribution": {
+      "approve_refund": 18,
+      "escalate": 31,
+      "partial_refund": 15,
+      "deny": 16
+    },
+    "autonomous_resolution_pct": 78.8,
+    "decision_accuracy_pct": 81.2,
+    "automated_decision_accuracy_pct": 76.2,
+    "hard_subset_accuracy_pct": 60.0,
+    "hard_subset_size": 10,
+    "unsafe_approvals": 15,
+    "unsafe_approval_rate_pct": 18.8,
+    "unsafe_approval_rate_of_risky_pct": 31.9,
+    "over_refunds": 0,
+    "escalation_precision_pct": 100.0,
+    "escalation_recall_pct": 54.8,
+    "avg_tool_calls": 4.53,
+    "avg_llm_calls": 6.53,
+    "avg_simulated_latency_ms": 5573.1,
+    "p95_simulated_latency_ms": 6280.0,
+    "avg_tool_latency_ms": 567.8,
+    "confusion_matrix": {
+      "approve_refund": {
+        "approve_refund": 18,
+        "partial_refund": 0,
+        "deny": 0,
+        "escalate": 0
+      },
+      "partial_refund": {
+        "approve_refund": 0,
+        "partial_refund": 15,
+        "deny": 0,
+        "escalate": 0
+      },
+      "deny": {
+        "approve_refund": 0,
+        "partial_refund": 1,
+        "deny": 15,
+        "escalate": 0
+      },
+      "escalate": {
+        "approve_refund": 14,
+        "partial_refund": 0,
+        "deny": 0,
+        "escalate": 17
+      }
+    },
+    "per_scenario_accuracy": {
+      "already_refunded": "2/2",
+      "changed_mind": "4/4",
+      "damaged_high_value": "0/4",
+      "damaged_low": "5/5",
+      "defective_low": "4/4",
+      "final_sale": "3/3",
+      "hard_hidden_trigger": "0/3",
+      "hard_mixed_signals": "2/2",
+      "hard_negation": "2/2",
+      "hard_no_order_id": "2/2",
+      "hard_used_item": "0/1",
+      "identity_mismatch": "2/2",
+      "in_transit": "3/3",
+      "late_delivery": "2/2",
+      "mandatory_trigger": "4/4",
+      "missing_item": "5/5",
+      "missing_unidentified": "2/2",
+      "new_account_mismatch": "0/3",
+      "non_refundable": "3/3",
+      "not_received_confirmed": "3/3",
+      "not_received_unconfirmed": "3/3",
+      "outside_window": "4/4",
+      "serial_refunder": "0/4",
+      "unauthorized_charge": "2/2",
+      "vague": "2/2",
+      "warranty": "2/2",
+      "wrong_item": "4/4"
+    },
+    "errors": [
+      {
+        "id": "EV-006",
+        "scenario": "damaged_high_value",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 249.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-007",
+        "scenario": "damaged_high_value",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 329.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-008",
+        "scenario": "damaged_high_value",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 899.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-009",
+        "scenario": "damaged_high_value",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 159.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-046",
+        "scenario": "serial_refunder",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 54.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-047",
+        "scenario": "serial_refunder",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 69.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-048",
+        "scenario": "serial_refunder",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 79.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-049",
+        "scenario": "serial_refunder",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 74.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-050",
+        "scenario": "new_account_mismatch",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 159.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-051",
+        "scenario": "new_account_mismatch",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 119.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-052",
+        "scenario": "new_account_mismatch",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 89.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-069",
+        "scenario": "hard_hidden_trigger",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 54.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-070",
+        "scenario": "hard_hidden_trigger",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 39.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-071",
+        "scenario": "hard_hidden_trigger",
+        "label": "escalate",
+        "predicted": "approve_refund",
+        "amount": 59.0,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      },
+      {
+        "id": "EV-078",
+        "scenario": "hard_used_item",
+        "label": "deny",
+        "predicted": "partial_refund",
+        "amount": 101.15,
+        "label_amount": 0.0,
+        "flags": [
+          "guardrails_disabled"
+        ]
+      }
+    ]
+  }
+}
