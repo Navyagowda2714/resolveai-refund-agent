@@ -5,7 +5,7 @@ resolves refund requests across five support channels, and knows when to involve
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![CI](https://github.com/Navyagowda2714/resolveai/actions/workflows/ci.yml/badge.svg)](https://github.com/Navyagowda2714/resolveai/actions/workflows/ci.yml)
+[![CI](https://github.com/Navyagowda2714/resolveai-refund-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/Navyagowda2714/resolveai-refund-agent/actions/workflows/ci.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 ## Why this exists
@@ -88,7 +88,7 @@ failure modes).
 ## Quickstart
 
 ```bash
-git clone https://github.com/Navyagowda2714/resolveai && cd resolveai
+git clone https://github.com/Navyagowda2714/resolveai-refund-agent && cd resolveai-refund-agent
 python -m venv .venv && source .venv/bin/activate
 make install          # pip install -e ".[dev]"
 make demo             # 5 showcase tickets, offline, no API key needed
@@ -272,7 +272,7 @@ How to read this:
 Methodology, metric definitions and the full error table are in
 [docs/EVALUATION.md](docs/EVALUATION.md).
 
-## Design decisions and trade-offs
+## Design decisions & trade-offs
 
 - **Rules engine and LLM are separate, and the gate trusts neither alone.** Policy facts (windows,
   amounts) are deterministic and testable; the LLM handles language, ambiguity and explanation.
